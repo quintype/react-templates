@@ -70,7 +70,6 @@ function getOptions(options) {
         force: false,
         format: 'stylish',
         targetVersion: reactDOMSupport.default,
-        lodashImportPath: 'lodash',
         native: false,
         nativeTargetVersion: reactNativeSupport.default
     }
@@ -289,8 +288,7 @@ function isCustomElement(tagName) {
  */
 function defaultContext(html, options, reportContext) {
     const defaultDefines = [
-        {moduleName: options.reactImportPath, alias: 'React', member: '*'},
-        {moduleName: options.lodashImportPath, alias: '_', member: '*'}
+        {moduleName: options.reactImportPath, alias: 'React', member: '*'}
     ]
     if (options.native) {
         const targetSupport = reactNativeSupport[options.nativeTargetVersion]
